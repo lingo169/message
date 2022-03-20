@@ -1,0 +1,15 @@
+//
+// Alerts
+//
+
+.alert {
+
+    hr {
+        color: inherit;
+        opacity: .4;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

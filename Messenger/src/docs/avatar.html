@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">Avatars</h1>
+                <p class="lead">Examples for opting different size of image classes.</p>
+            </header>
+
+            <h3 class="display-2" data-create-link="#">Sizes</h3>
+            <p>Use avatar sizing via class on <code>avatar-* xl, lg, sm, xs</code></p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-xl me-3">
+                            <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                        </div>
+                        <div class="avatar avatar-lg me-3">
+                            <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                        </div>
+                        <div class="avatar me-3">
+                            <img src="@@webRoot/assets/img/avatars/3.jpg" alt="#" class="avatar-img">
+                        </div>
+                        <div class="avatar avatar-sm me-3">
+                            <img src="@@webRoot/assets/img/avatars/4.jpg" alt="#" class="avatar-img">
+                        </div>
+                        <div class="avatar avatar-xs me-3">
+                            <img src="@@webRoot/assets/img/avatars/5.jpg" alt="#" class="avatar-img">
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <div class="avatar avatar-xl">
+                                <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                            </div>
+
+                            <div class="avatar avatar-lg">
+                                <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                            </div>
+
+                            <div class="avatar">
+                                <img src="assets/img/avatars/3.jpg" alt="#" class="avatar-img">
+                            </div>
+
+                            <div class="avatar avatar-sm">
+                                <img src="assets/img/avatars/4.jpg" alt="#" class="avatar-img">
+                            </div>
+
+                            <div class="avatar avatar-xs">
+                                <img src="assets/img/avatars/5.jpg" alt="#" class="avatar-img">
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Indicator</h3>
+            <p>Add an online or offline status indicator to show user's status.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-xl avatar-online me-3">
+                            <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                        </div>
+                        <div class="avatar avatar-lg avatar-offline me-3">
+                            <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                        </div>
+                        <div class="avatar avatar-online me-3">
+                            <img src="@@webRoot/assets/img/avatars/3.jpg" alt="#" class="avatar-img">
+                        </div>
+                        <div class="avatar avatar-sm avatar-offline me-3">
+                            <img src="@@webRoot/assets/img/avatars/4.jpg" alt="#" class="avatar-img">
+                        </div>
+                        <div class="avatar avatar-xs avatar-online me-3">
+                            <img src="@@webRoot/assets/img/avatars/5.jpg" alt="#" class="avatar-img">
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <div class="avatar avatar-xl avatar-online">
+                                <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                            </div>
+
+                            <div class="avatar avatar-lg avatar-offline">
+                                <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                            </div>
+
+                            <div class="avatar avatar-online">
+                                <img src="assets/img/avatars/3.jpg" alt="#" class="avatar-img">
+                            </div>
+
+                            <div class="avatar avatar-sm avatar-offline">
+                                <img src="assets/img/avatars/4.jpg" alt="#" class="avatar-img">
+                            </div>
+
+                            <div class="avatar avatar-xs avatar-online">
+                                <img src="assets/img/avatars/5.jpg" alt="#" class="avatar-img">
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Initials</h3>
+            <p>You won't always have an image for every user, so easily use initials instead.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-xl me-3">
+                            <span class="avatar-text">A</span>
+                        </div>
+                        <div class="avatar avatar-lg me-3">
+                            <span class="avatar-text bg-success">B</span>
+                        </div>
+                        <div class="avatar me-3">
+                            <span class="avatar-text bg-warning">C</span>
+                        </div>
+                        <div class="avatar avatar-sm me-3">
+                            <span class="avatar-text bg-danger">D</span>
+                        </div>
+                        <div class="avatar avatar-xs me-3">
+                            <span class="avatar-text bg-info">E</span>
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <div class="avatar avatar-xl">
+                                <span class="avatar-text">A</span>
+                            </div>
+
+                            <div class="avatar avatar-lg">
+                                <span class="avatar-text bg-success">B</span>
+                            </div>
+
+                            <div class="avatar">
+                                <span class="avatar-text bg-warning">C</span>
+                            </div>
+
+                            <div class="avatar avatar-sm">
+                                <span class="avatar-text bg-danger">D</span>
+                            </div>
+
+                            <div class="avatar avatar-xs">
+                                <span class="avatar-text bg-info">E</span>
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Groups</h3>
+            <p>Easily group avatars of any size and content with a single component.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="row align-items-center gx-5">
+                        <div class="col-auto">
+                            <div class="avatar-group">
+                                <div class="avatar avatar-xl">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xl">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xl">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="avatar-group">
+                                <div class="avatar avatar-lg">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-lg">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-lg">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="avatar-group">
+                                <div class="avatar">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="avatar-group">
+                                <div class="avatar avatar-sm">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-sm">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-sm">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="avatar-group">
+                                <div class="avatar avatar-xs">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <div class="avatar-group">
+                                <div class="avatar avatar-xl">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xl">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xl">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+
+                            <div class="avatar-group">
+                                <div class="avatar avatar-lg">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-lg">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-lg">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+
+                            <div class="avatar-group">
+                                <div class="avatar">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+
+                            <div class="avatar-group">
+                                <div class="avatar avatar-sm">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-sm">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-sm">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+
+                            <div class="avatar-group">
+                                <div class="avatar avatar-xs">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="row align-items-center gx-5">
+                        <div class="col-auto">
+                            <div class="avatar-group-trigon avatar-group-trigon-xl">
+                                <div class="avatar avatar-xl">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xl">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xl">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="avatar-group-trigon avatar-group-trigon-lg">
+                                <div class="avatar avatar-lg">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-lg">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-lg">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="avatar-group-trigon">
+                                <div class="avatar">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="avatar-group-trigon avatar-group-trigon-sm">
+                                <div class="avatar avatar-sm">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-sm">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-sm">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="avatar-group-trigon avatar-group-trigon-xs">
+                                <div class="avatar avatar-xs">
+                                    <img src="@@webRoot/assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <img src="@@webRoot/assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <div class="avatar-group-trigon avatar-group-trigon-xl">
+                                <div class="avatar avatar-xl">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xl">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xl">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+
+                            <div class="avatar-group-trigon avatar-group-trigon-lg">
+                                <div class="avatar avatar-lg">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-lg">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-lg">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+
+                            <div class="avatar-group-trigon">
+                                <div class="avatar">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+
+                            <div class="avatar-group-trigon avatar-group-trigon-sm">
+                                <div class="avatar avatar-sm">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-sm">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-sm">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+
+                            <div class="avatar-group-trigon avatar-group-trigon-xs">
+                                <div class="avatar avatar-xs">
+                                    <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-text">D</span>
+                                </div>
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Badges</h3>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="d-flex align-items-center">
+                        <!-- Avatar -->
+                        <div class="avatar avatar-xl me-3">
+                            <img src="@@webRoot/assets/img/avatars/9.jpg" alt="#" class="avatar-img">
+
+                            <div class="badge border-outline badge-xl badge-circle bg-primary position-absolute bottom-0 end-0">
+                                @@include("../assets/img/icons/settings.svg")
+                            </div>
+                        </div>
+                        <!-- Avatar -->
+                        <div class="avatar avatar-lg me-3">
+                            <img src="@@webRoot/assets/img/avatars/9.jpg" alt="#" class="avatar-img">
+
+                            <div class="badge border-outline badge-lg badge-circle bg-primary position-absolute bottom-0 end-0">
+                                @@include("../assets/img/icons/settings.svg")
+                            </div>
+                        </div>
+                        <!-- Avatar -->
+                        <div class="avatar me-3">
+                            <img src="@@webRoot/assets/img/avatars/9.jpg" alt="#" class="avatar-img">
+
+                            <div class="badge border-outline badge-circle bg-primary position-absolute bottom-0 end-0">
+                                @@include("../assets/img/icons/settings.svg")
+                            </div>
+                        </div>
+                        <!-- Avatar -->
+                        <div class="avatar avatar-sm me-3">
+                            <img src="@@webRoot/assets/img/avatars/9.jpg" alt="#" class="avatar-img">
+
+                            <div class="badge badge-sm border-outline badge-circle bg-primary position-absolute bottom-0 end-0">
+                                @@include("../assets/img/icons/settings.svg")
+                            </div>
+                        </div>
+                        <!-- Avatar -->
+                        <div class="avatar avatar-xs me-3">
+                            <img src="@@webRoot/assets/img/avatars/9.jpg" alt="#" class="avatar-img">
+
+                            <div class="badge badge-xs  border-outline badge-circle bg-primary position-absolute bottom-0 end-0">
+                                @@include("../assets/img/icons/settings.svg")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                            &lt;!-- Avatar --&gt;
+                            &lt;div class=&quot;avatar avatar-xl me-3&quot;&gt;
+                                &lt;img src=&quot;@@webRoot/assets/img/avatars/9.jpg&quot; alt=&quot;#&quot; class=&quot;avatar-img&quot;&gt;
+
+                                &lt;div class=&quot;badge border-outline badge-xl badge-circle bg-primary position-absolute bottom-0 end-0&quot;&gt;
+                                    @@include(&quot;../../img/icons/settings.svg&quot;)
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Avatar --&gt;
+                            &lt;div class=&quot;avatar avatar-lg me-3&quot;&gt;
+                                &lt;img src=&quot;@@webRoot/assets/img/avatars/9.jpg&quot; alt=&quot;#&quot; class=&quot;avatar-img&quot;&gt;
+
+                                &lt;div class=&quot;badge border-outline badge-lg badge-circle bg-primary position-absolute bottom-0 end-0&quot;&gt;
+                                    @@include(&quot;../../img/icons/settings.svg&quot;)
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Avatar --&gt;
+                            &lt;div class=&quot;avatar me-3&quot;&gt;
+                                &lt;img src=&quot;@@webRoot/assets/img/avatars/9.jpg&quot; alt=&quot;#&quot; class=&quot;avatar-img&quot;&gt;
+
+                                &lt;div class=&quot;badge border-outline badge-circle bg-primary position-absolute bottom-0 end-0&quot;&gt;
+                                    @@include(&quot;../../img/icons/settings.svg&quot;)
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Avatar --&gt;
+                            &lt;div class=&quot;avatar avatar-sm me-3&quot;&gt;
+                                &lt;img src=&quot;@@webRoot/assets/img/avatars/9.jpg&quot; alt=&quot;#&quot; class=&quot;avatar-img&quot;&gt;
+
+                                &lt;div class=&quot;badge badge-sm border-outline badge-circle bg-primary position-absolute bottom-0 end-0&quot;&gt;
+                                    @@include(&quot;../../img/icons/settings.svg&quot;)
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Avatar --&gt;
+                            &lt;div class=&quot;avatar avatar-xs me-3&quot;&gt;
+                                &lt;img src=&quot;@@webRoot/assets/img/avatars/9.jpg&quot; alt=&quot;#&quot; class=&quot;avatar-img&quot;&gt;
+
+                                &lt;div class=&quot;badge badge-xs border-outline badge-circle bg-primary position-absolute bottom-0 end-0&quot;&gt;
+                                    @@include(&quot;../../img/icons/settings.svg&quot;)
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

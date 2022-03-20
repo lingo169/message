@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">Introduction</h1>
+                <p class="lead">Get started with Messenger by following this guide. Always feel free to reach out to support@offsetcode.com</p>
+
+            </header>
+
+            <h3 class="display-2" data-create-link="#">Node</h3>
+            <p>In order to use Gulp, you will need to download Node. If Node is already installed in your system, please make sure the installed version is the stable version of Node - LTS.</p>
+            <p><a href="https://nodejs.org/en/">Node Downloads Page →</a></p>
+
+            <hr class="my-10">
+
+            <h3 class="display-2" data-create-link="#">Gulp</h3>
+            <p>Open your terminal and download Gulp Command Line Interface to be able to use gulp in your terminal.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <pre class="bg-dark hide-scrollbar rounded doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            npm install gulp-cli -g
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <hr class="my-10">
+
+            <h3 class="display-3" data-create-link="#">NPM modules</h3>
+            <p>Open your terminal to the root directory of your unzipped theme and run to install all of theme's dependencies.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <pre class="bg-dark hide-scrollbar rounded doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            npm install
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <hr class="my-10">
+
+            <h3 class="display-3" data-create-link="#">Compiling</h3>
+            <p>Open your terminal to the root directory of the theme to use the following commands:</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <pre class="bg-dark hide-scrollbar rounded doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            gulp
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <p>Compile and watch the SCSS/JS/HTML, use Live Reload to update browsers instantly, start a server, and pop a tab in your default browser. Any changes made to the source files will be compiled as soon as you save the file.</p>
+            <p>Hit Ctrl+C or just close the command line window to stop the server.</p>
+
+            <hr>
+
+            <!-- Example -->
+            <article class="my-10">
+                <pre class="bg-dark hide-scrollbar rounded doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            gulp build
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <p>Generates a <code>dist</code> directory with all the production files.</p>
+
+            <hr class="my-10">
+
+            <h3 class="display-3" data-create-link="#">HTML includes</h3>
+            <p>
+                The <code>gulp-file-include</code> package is used to make global changes in HTML files easier.
+                Easily create new <code>.html</code> partials inside the <code>/partials</code> folder and point to them from any file by specifying the path to the partial file and using the <code>@@include</code> keyword.
+            </p>
+            <p>
+                Please read the <a href="https://www.npmjs.com/package/gulp-file-include" target="_blank">official package documentation</a> for more info.
+            </p>
+
+            <hr class="my-10">
+
+            <h3 class="display-3" data-create-link="#">Customizing SCSS</h3>
+            <p>There are 2 basic ways to customize your theme:</p>
+
+            <ol>
+                <li>
+                    <strong>Customizing SCSS.</strong> This is more versatile and sustainable way to customize the template, but requires the <code>gulp</code> compilation steps outlined above. The 2 major benefits of this strategy are using variable overrides to easily customize theme styles, plus you never have to touch Bootstrap or template's source, meaning future updates will be much, much, simpler. There are 3 provided files that make this strategy simple to implement:
+                    <ul>
+                        <li>
+                            <code>user-variables.scss</code> or <code>user-variables.dark.scss</code>: This files can be used to override Bootstrap core and the template variables for customizing elements that have been tied to variables.
+                        </li>
+                        <li>
+                            <code>user.scss</code>: This file can be used for writing custom SCSS that will be compiled alongside Bootstrap and template's core files.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Compiled CSS.</strong> If you plan on using the template "as is", or only need limited customization, feel free to simply attach the compiled <code>template.css</code>, <code>template.dark.css</code> or <code>template.min.css</code>, <code>template.dark.min.css</code> file in the <code>dist/assets/css</code> directory.
+                </li>
+            </ol>
+
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

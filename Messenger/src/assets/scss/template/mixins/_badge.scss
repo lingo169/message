@@ -1,0 +1,13 @@
+//
+// Badge variants
+//
+
+@mixin badge-size($padding-y, $padding-x, $font-size) {
+    padding: $padding-y $padding-x;
+    font-size: $font-size;
+
+    &.badge-circle {
+        height: calc(1em + #{($padding-y * 2)});
+        padding: $padding-y;
+    }
+}

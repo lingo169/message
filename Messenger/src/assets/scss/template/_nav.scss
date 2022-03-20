@@ -1,0 +1,18 @@
+//
+// Nav
+//
+
+.nav-pills {
+    background: $dark;
+    border-radius: $nav-pills-border-radius;
+    padding: .3125rem;
+
+    .nav-link {
+        padding: .75rem;
+        color: $body-color;
+
+        &.active {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+        }
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">Toasts</h1>
+                <p class="lead">Push notifications to your visitors with a toast, a lightweight and easily customizable alert message.</p>
+                <p class="lead"><a href="https://getbootstrap.com/docs/5.0/components/toasts/" target="_blank">Bootstrap documentation →</a></p>
+            </header>
+
+            <h3 class="display-2" data-create-link="#">Example</h3>
+            <p>Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.</p>
+
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <!-- Avatar -->
+                            <div class="avatar avatar-xs me-4">
+                                <span class="avatar-text bg-success">
+                                    @@include("../assets/img/icons/lock.svg")
+                                </span>
+                            </div>
+
+                            <h6 class="me-auto">Password changed</h6>
+                            <small class="text-muted">11 mins ago</small>
+
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Your password has been updated successfully.
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header">
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-xs me-4">
+                                        <span class="avatar-text bg-success">
+                                            @@include("../assets/img/icons/lock.svg")
+                                        </span>
+                                    </div>
+
+                                    <h6 class="me-auto">Password changed</h6>
+                                    <small class="text-muted">11 mins ago</small>
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">
+                                    Your password has been updated successfully.
+                                </div>
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

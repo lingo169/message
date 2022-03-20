@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">Autosize</h1>
+                <p class="lead">A small, stand-alone script to automatically adjust textarea height.</p>
+                <!-- <p class="lead"><a href="http://www.jacklmoore.com/autosize/" target="_blank">Plugin documentation →</a></p> -->
+            </header>
+
+            <!-- <h3 class="display-2" data-create-link="#">Example</h3> -->
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <textarea class="form-control" placeholder="Try typing something..." id="" rows="1" data-autosize="true"></textarea>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <textarea class="form-control" placeholder="Try typing something..." id="" rows="1" data-autosize="true"></textarea>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

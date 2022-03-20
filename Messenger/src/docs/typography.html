@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">Typography</h1>
+                <p class="lead">Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.</p>
+                <p class="lead"><a href="https://getbootstrap.com/docs/5.0/content/typography/" target="_blank">Bootstrap documentation →</a></p>
+            </header>
+
+            <h3 class="display-2" data-create-link="#">Headings</h3>
+            <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Heading</th>
+                            <th>Example</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>&lt;h1&gt;&lt;/h1&gt;</code>
+                            </td>
+                            <td><span class="h1">h1. Bootstrap heading</span></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>&lt;h2&gt;&lt;/h2&gt;</code>
+                            </td>
+                            <td><span class="h2">h2. Bootstrap heading</span></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>&lt;h3&gt;&lt;/h3&gt;</code>
+                            </td>
+                            <td><span class="h3">h3. Bootstrap heading</span></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>&lt;h4&gt;&lt;/h4&gt;</code>
+                            </td>
+                            <td><span class="h4">h4. Bootstrap heading</span></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>&lt;h5&gt;&lt;/h5&gt;</code>
+                            </td>
+                            <td><span class="h5">h5. Bootstrap heading</span></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>&lt;h6&gt;&lt;/h6&gt;</code>
+                            </td>
+                            <td><span class="h6">h6. Bootstrap heading</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <h1>h1. Bootstrap heading</h1>
+                            <h2>h2. Bootstrap heading</h2>
+                            <h3>h3. Bootstrap heading</h3>
+                            <h4>h4. Bootstrap heading</h4>
+                            <h5>h5. Bootstrap heading</h5>
+                            <h6>h6. Bootstrap heading</h6>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Blockquotes</h3>
+            <p>For quoting blocks of content from another source within your document. Wrap <code>&lt;blockquote class="blockquote"&gt;</code> around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <blockquote class="blockquote">
+                        <p>A well-known quote, contained in a blockquote element.</p>
+                    </blockquote>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <blockquote class="blockquote">
+                                <p>A well-known quote, contained in a blockquote element.</p>
+                            </blockquote>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Lists</h3>
+            <hr class="my-10">
+
+            <h4 class="display-3" data-create-link="#">Unstyled</h4>
+            <p>Remove the default <code>list-style</code> and left margin on list items (immediate children only). This only applies to immediate children list items.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <ul class="list-unstyled">
+                        <li>This is a list.</li>
+                        <li>It appears completely unstyled.</li>
+                        <li>Structurally, it's still a list.</li>
+                        <li>However, this style only applies to immediate child elements.</li>
+                        <li>Nested lists:
+                            <ul>
+                                <li>are unaffected by this style</li>
+                                <li>will still show a bullet</li>
+                                <li>and have appropriate left margin</li>
+                            </ul>
+                        </li>
+                        <li>This may still come in handy in some situations.</li>
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-unstyled">
+                                <li>This is a list.</li>
+                                <li>It appears completely unstyled.</li>
+                                <li>Structurally, it's still a list.</li>
+                                <li>However, this style only applies to immediate child elements.</li>
+                                <li>Nested lists:
+                                    <ul>
+                                        <li>are unaffected by this style</li>
+                                        <li>will still show a bullet</li>
+                                        <li>and have appropriate left margin</li>
+                                    </ul>
+                                </li>
+                                <li>This may still come in handy in some situations.</li>
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h4 class="display-3" data-create-link="#">Inline</h4>
+            <p>Remove a list’s bullets and apply some light <code>margin</code> with a combination of two classes, <code>.list-inline</code> and <code>.list-inline-item</code>.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">List item</li>
+                        <li class="list-inline-item">List item</li>
+                        <li class="list-inline-item">List item</li>
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">List item</li>
+                                <li class="list-inline-item">List item</li>
+                                <li class="list-inline-item">List item</li>
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

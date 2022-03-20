@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    @@include("partials/head/head.html")
+
+    <body>
+        <!-- Layout -->
+        <div class="layout overflow-hidden">
+            <!-- Navigation -->
+            @@include("partials/navigation/navigation.html")
+            <!-- Navigation -->
+
+            <!-- Sidebar -->
+            @@include("partials/sidebar/sidebar.html")
+            <!-- Sidebar -->
+
+            <!-- Chat -->
+            <main class="main">
+                <div class="container h-100">
+
+                    <div class="d-flex flex-column h-100 justify-content-center text-center">
+                        <div class="mb-6">
+                            <span class="icon icon-xl text-muted">
+                                @@include("assets/img/icons/message-square.svg")
+                            </span>
+                        </div>
+
+                        <p class="text-muted">Pick a person from left menu, <br> and start your conversation.</p>
+                    </div>
+
+                </div>
+            </main>
+            <!-- Chat -->
+
+        </div>
+        <!-- Layout -->
+
+        <!-- Modal: Invite -->
+        @@include("partials/modal/invite.html")
+
+        <!-- Modal: Profile -->
+        @@include("partials/modal/profile.html")
+
+        <!-- Modal: User profile -->
+        @@include("partials/modal/user-profile.html")
+
+        <!-- Modal: Media Preview -->
+        @@include("partials/modal/media-preview.html")
+
+        <!-- Scripts -->
+        @@include("partials/scripts/scripts.html")
+    </body>
+</html>

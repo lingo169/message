@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">List group</h1>
+                <p class="lead">List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.</p>
+                <p class="lead"><a href="https://getbootstrap.com/docs/5.0/components/list-group/" target="_blank">Bootstrap documentation →</a></p>
+            </header>
+
+            <h3 class="display-2" data-create-link="#">Basic example</h3>
+            <p>The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-group">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Active items</h3>
+            <p>Add <code>.active</code> to a <code>.list-group-item</code> to indicate the current active selection.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <ul class="list-group">
+                        <li class="list-group-item active" aria-current="true">An active item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">An active item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Flush</h3>
+            <p>Add <code>.list-group-flush</code> to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="border rounded-top p-8">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Contextual classes</h3>
+            <p>Use contextual classes to style list items with a stateful background and color.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="border rounded-top p-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">A simple default list group item</li>
+                        <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
+                        <li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+                        <li class="list-group-item list-group-item-success">A simple success list group item</li>
+                        <li class="list-group-item list-group-item-danger">A simple danger list group item</li>
+                        <li class="list-group-item list-group-item-warning">A simple warning list group item</li>
+                        <li class="list-group-item list-group-item-info">A simple info list group item</li>
+                        <li class="list-group-item list-group-item-light">A simple light list group item</li>
+                        <li class="list-group-item list-group-item-dark">A simple dark list group item</li>
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-group">
+                                <li class="list-group-item">A simple default list group item</li>
+                                <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
+                                <li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+                                <li class="list-group-item list-group-item-success">A simple success list group item</li>
+                                <li class="list-group-item list-group-item-danger">A simple danger list group item</li>
+                                <li class="list-group-item list-group-item-warning">A simple warning list group item</li>
+                                <li class="list-group-item list-group-item-info">A simple info list group item</li>
+                                <li class="list-group-item list-group-item-light">A simple light list group item</li>
+                                <li class="list-group-item list-group-item-dark">A simple dark list group item</li>
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">With badges</h3>
+            <p>Add badges to any list group item to show unread counts, activity, and more with the help of some utilities.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            A list item
+                            <span class="badge bg-primary rounded-pill">14</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            A second list item
+                            <span class="badge bg-primary rounded-pill">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            A third list item
+                            <span class="badge bg-primary rounded-pill">1</span>
+                        </li>
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    A list item
+                                    <span class="badge bg-primary rounded-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    A second list item
+                                    <span class="badge bg-primary rounded-pill">2</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    A third list item
+                                    <span class="badge bg-primary rounded-pill">1</span>
+                                </li>
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Custom content</h3>
+            <p>Add nearly any HTML within, even for linked list groups like the one below, <br> with the help of flexbox utilities.</p>
+
+            <hr class="my-10">
+
+            <h4 class="display-3" data-create-link="#">Files</h4>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="border rounded-top p-8">
+                    <ul class="list-group list-group-flush">
+
+                        <!-- Item -->
+                        <li class="list-group-item">
+                            <div class="row align-items-center gx-5">
+                                <!-- Icons -->
+                                <div class="col-auto">
+                                    <div class="avatar-group">
+                                        <a href="#" class="avatar avatar-sm" title="William Pearson">
+                                            <img class="avatar-img" src="@@webRoot/assets/img/avatars/6.jpg" alt="#">
+                                        </a>
+
+                                        <a href="#" class="avatar avatar-sm">
+                                            <span class="avatar-text bg-primary">
+                                                @@include("../assets/img/icons/file-text.svg")
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Icons -->
+
+                                <!-- Text -->
+                                <div class="col overflow-hidden">
+                                    <h5 class="text-truncate">
+                                        <a href="#">E5419783-047D-4B4C-B30E-F24DD8247731.JPG</a>
+                                    </h5>
+                                    <ul class="list-inline m-0">
+                                        <li class="list-inline-item">
+                                            <small class="text-uppercase text-muted">79.2 KB</small>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <small class="text-uppercase text-muted">txt</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Text -->
+
+                                <!-- Dropdown -->
+                                <div class="col-auto">
+                                    <div class="dropdown">
+                                        <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            @@include("../assets/img/icons/more-vertical.svg")
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                                    Download
+                                                    <div class="icon ms-auto">
+                                                        @@include("../assets/img/icons/download.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
+                                                    <span class="me-auto">Delete</span>
+                                                    <div class="icon">
+                                                        @@include("../assets/img/icons/trash-2.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Dropdown -->
+                            </div>
+                        </li>
+                        <!-- Item end -->
+
+                        <!-- Item -->
+                        <li class="list-group-item">
+                            <div class="row align-items-center gx-5">
+                                <!-- Icons -->
+                                <div class="col-auto">
+                                    <div class="avatar-group">
+                                        <a href="#" class="avatar avatar-sm" title="William Pearson">
+                                            <img class="avatar-img" src="@@webRoot/assets/img/avatars/9.jpg" alt="#">
+                                        </a>
+
+                                        <a href="#" class="avatar avatar-sm">
+                                            <span class="avatar-text bg-primary">
+                                                @@include("../assets/img/icons/file-text.svg")
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Icons -->
+
+                                <!-- Text -->
+                                <div class="col overflow-hidden">
+                                    <h5 class="text-truncate">
+                                        <a href="#">E5419783-047D-4B4C-B30E-F24DD8247731.JPG</a>
+                                    </h5>
+                                    <ul class="list-inline m-0">
+                                        <li class="list-inline-item">
+                                            <small class="text-uppercase text-muted">79.2 KB</small>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <small class="text-uppercase text-muted">txt</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Text -->
+
+                                <!-- Dropdown -->
+                                <div class="col-auto">
+                                    <div class="dropdown">
+                                        <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            @@include("../assets/img/icons/more-vertical.svg")
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                                    Download
+                                                    <div class="icon ms-auto">
+                                                        @@include("../assets/img/icons/download.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
+                                                    <span class="me-auto">Delete</span>
+                                                    <div class="icon">
+                                                        @@include("../assets/img/icons/trash-2.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Dropdown -->
+                            </div>
+                        </li>
+                        <!-- Item end -->
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-group list-group-flush">
+
+                                ...
+
+                                <!-- Item -->
+                                <li class="list-group-item">
+                                    <div class="row align-items-center gx-5">
+                                        <!-- Icons -->
+                                        <div class="col-auto">
+                                            <div class="avatar-group">
+                                                <a href="#" class="avatar avatar-sm" title="William Pearson">
+                                                    <img class="avatar-img" src="@@webRoot/assets/img/avatars/6.jpg" alt="#">
+                                                </a>
+
+                                                <a href="#" class="avatar avatar-sm">
+                                                    <span class="avatar-text bg-primary">
+                                                        <img src="@@webRoot/assets/img/icons/file-text.svg" data-svg="" alt="">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- Icons -->
+
+                                        <!-- Text -->
+                                        <div class="col overflow-hidden">
+                                            <h5 class="text-truncate">
+                                                <a href="#">E5419783-047D-4B4C-B30E-F24DD8247731.JPG</a>
+                                            </h5>
+                                            <ul class="list-inline m-0">
+                                                <li class="list-inline-item">
+                                                    <small class="text-uppercase text-muted">79.2 KB</small>
+                                                </li>
+
+                                                <li class="list-inline-item">
+                                                    <small class="text-uppercase text-muted">txt</small>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Text -->
+
+                                        <!-- Dropdown -->
+                                        <div class="col-auto">
+                                            <div class="dropdown">
+                                                <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <img src="@@webRoot/assets/img/icons/more-vertical.svg" data-svg="" alt="">
+                                                </a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            Download
+                                                            <div class="icon ms-auto">
+                                                                <img src="@@webRoot/assets/img/icons/download.svg" data-svg="" alt="">
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li>
+                                                        <a class="dropdown-item d-flex align-items-center text-danger" href="#">
+                                                            <span class="me-auto">Delete</span>
+                                                            <div class="icon">
+                                                                <img src="@@webRoot/assets/img/icons/trash-2.svg" data-svg="" alt="">
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- Dropdown -->
+                                    </div>
+                                </li>
+                                <!-- Item end -->
+
+                                ...
+
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h4 class="display-3" data-create-link="#">Users</h4>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="border rounded-top p-8">
+                    <ul class="list-group list-group-flush">
+                        <!-- Item -->
+                        <li class="list-group-item">
+                            <div class="row align-items-center gx-5">
+                                <!-- Avatar -->
+                                <div class="col-auto">
+                                    <a href="#" class="avatar avatar-online">
+                                        <img class="avatar-img" src="@@webRoot/assets/img/avatars/11.jpg" alt="">
+                                    </a>
+                                </div>
+                                <!-- Avatar -->
+
+                                <!-- Text -->
+                                <div class="col">
+                                    <h5><a href="#">Mila White</a></h5>
+                                    <p>online</p>
+                                </div>
+                                <!-- Text -->
+
+                                <!-- Dropdown -->
+                                <div class="col-auto">
+                                    <div class="dropdown">
+                                        <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            @@include("../assets/img/icons/more-vertical.svg")
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                                    Promote
+                                                    <div class="icon ms-auto">
+                                                        @@include("../assets/img/icons/trending-up.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                                    Restrict
+                                                    <div class="icon ms-auto">
+                                                        @@include("../assets/img/icons/trending-down.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
+                                                    Delete
+                                                    <div class="icon ms-auto">
+                                                        @@include("../assets/img/icons/trash-2.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Dropdown -->
+                            </div>
+                        </li>
+                        <!-- Item end -->
+
+                        <!-- Item -->
+                        <li class="list-group-item">
+                            <div class="row align-items-center gx-5">
+                                <!-- Avatar -->
+                                <div class="col-auto">
+                                    <a href="#" class="avatar avatar-online">
+                                        <img class="avatar-img" src="@@webRoot/assets/img/avatars/1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <!-- Avatar -->
+
+                                <!-- Text -->
+                                <div class="col">
+                                    <h5><a href="#">Don Knight</a></h5>
+                                    <p>online</p>
+                                </div>
+                                <!-- Text -->
+
+                                <!-- Dropdown -->
+                                <div class="col-auto">
+                                    <div class="dropdown">
+                                        <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            @@include("../assets/img/icons/more-vertical.svg")
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                                    Promote
+                                                    <div class="icon ms-auto">
+                                                        @@include("../assets/img/icons/trending-up.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                                    Restrict
+                                                    <div class="icon ms-auto">
+                                                        @@include("../assets/img/icons/trending-down.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
+                                                    Delete
+                                                    <div class="icon ms-auto">
+                                                        @@include("../assets/img/icons/trash-2.svg")
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Dropdown -->
+                            </div>
+                        </li>
+                        <!-- Item end -->
+                    </ul>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <ul class="list-group list-group-flush">
+
+                                ...
+
+                                <!-- Item -->
+                                <li class="list-group-item">
+                                    <div class="row align-items-center gx-5">
+                                        <!-- Avatar -->
+                                        <div class="col-auto">
+                                            <a href="#" class="avatar avatar-online">
+                                                <img class="avatar-img" src="@@webRoot/assets/img/avatars/11.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Text -->
+                                        <div class="col">
+                                            <h5><a href="#">Mila White</a></h5>
+                                            <p>online</p>
+                                        </div>
+                                        <!-- Text -->
+
+                                        <!-- Dropdown -->
+                                        <div class="col-auto">
+                                            <div class="dropdown">
+                                                <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <img src="../assets/img/icons/more-vertical" data-svg="" alt="">
+                                                </a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            Promote
+                                                            <div class="icon ms-auto">
+                                                                <img src="../assets/img/icons/more-vertical.svg" data-svg="" alt="">
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            Restrict
+                                                            <div class="icon ms-auto">
+                                                                <img src="../assets/img/icons/trending-down.svg" data-svg="" alt="">
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li>
+                                                        <a class="dropdown-item d-flex align-items-center text-danger" href="#">
+                                                            Delete
+                                                            <div class="icon ms-auto">
+                                                                <img src="../assets/img/icons/trash-2.svg" data-svg="" alt="">
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- Dropdown -->
+                                    </div>
+                                </li>
+                                <!-- Item end -->
+
+                                ...
+
+                            </ul>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

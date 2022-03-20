@@ -1,0 +1,16 @@
+//
+// Colors
+//
+
+@each $color, $value in $theme-colors {
+    .text-soft-#{$color} {
+        color: rgba-to-rgb(rgba($value, 0.6)) !important;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .bg-soft-#{$color} {
+        background: rgba-to-rgb(rgba($value, 0.2)) !important;
+        background: rgba($value, 0.2) !important;
+    }
+}

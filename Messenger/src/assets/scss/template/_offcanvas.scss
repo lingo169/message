@@ -1,0 +1,49 @@
+//
+// Offcanvas
+//
+
+.offcanvas-aside {
+    z-index: $zindex-modal-backdrop;
+    transition-property: all;
+    width: 100%;
+}
+
+.offcanvas-footer {
+    padding: $offcanvas-padding-y $offcanvas-padding-x;
+}
+
+hr.offcanvas-divider {
+    background: $border-color;
+    height: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -$offcanvas-padding-x;
+    margin-right: -$offcanvas-padding-x;
+}
+
+.offcanvas-no-gap {
+    margin-left: -$offcanvas-padding-x;
+    margin-right: -$offcanvas-padding-x;
+}
+
+@include media-breakpoint-up(xl) {
+
+    .offcanvas-aside {
+        position: static;
+        transition: none;
+        width: 0;
+
+        &.offcanvas-end {
+            border-left: $offcanvas-border-width solid $offcanvas-border-color;
+        }
+
+        &.offcanvas-start {
+            border-right: $offcanvas-border-width solid $offcanvas-border-color;
+        }
+
+        &.show {
+            transform: translateX(0);
+            min-width: $offcanvas-horizontal-width;
+        }
+    }
+}

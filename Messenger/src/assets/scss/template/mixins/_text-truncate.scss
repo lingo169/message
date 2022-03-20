@@ -1,0 +1,14 @@
+@each $breakpoint, $value in $grid-breakpoints {
+    @include media-breakpoint-down($breakpoint, $grid-breakpoints) {
+        .text-truncate-#{$breakpoint} {
+            @include text-truncate
+        }
+    }
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

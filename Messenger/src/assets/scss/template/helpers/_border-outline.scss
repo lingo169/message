@@ -1,0 +1,19 @@
+//
+// Outline Border
+//
+
+.border-outline {
+    box-shadow: 0 0 0 $border-width rgba($body-bg, 1);
+}
+
+@each $width, $value in $border-widths {
+    .border-outline.border-#{$width} {
+        box-shadow: 0 0 0 $value rgba($body-bg, 1) !important;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .border-outline.border-#{$color} {
+        box-shadow: 0 0 0 $border-width rgba($value, 1) !important;
+    }
+}

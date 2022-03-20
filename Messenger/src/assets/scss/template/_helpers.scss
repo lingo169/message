@@ -1,0 +1,23 @@
+//
+// Helpers
+//
+
+@import "helpers/stretched-link";
+@import "helpers/border-outline";
+
+.flex-1 {
+    flex: 1;
+}
+
+.hide-empty:empty {
+    display: none;
+}
+
+[data-horizontal-scroll] {
+    @include hide-scrollbar();
+    overflow-x: scroll !important;
+}
+
+.hide-scrollbar {
+    @include hide-scrollbar();
+}

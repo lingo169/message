@@ -1,0 +1,22 @@
+//
+// List group
+//
+
+.list-group-flush {
+
+    .list-group-item {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    &.list-group-no-gutters {
+
+        .list-group-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .list-group-item:first-child {
+            padding-top: 0;
+        }
+    }
+}

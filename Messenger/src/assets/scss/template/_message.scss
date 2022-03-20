@@ -1,0 +1,134 @@
+//
+// Message
+//
+
+.message {
+
+    & + & {
+        margin-top: 1rem;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 1.5rem;
+        }
+    }
+
+    &-divider {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.message {
+    display: flex;
+    align-items: flex-end;
+
+    &#{&}-out {
+        flex-direction: row-reverse;
+    }
+
+    &-inner {
+        margin-left: 0.5rem;
+
+        @include media-breakpoint-up(md) {
+            margin-left: 1rem;
+        }
+
+        .message-out & {
+            margin-left: 0;
+            margin-right: 0.5rem;
+
+            @include media-breakpoint-up(md) {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    &-content {
+        display: flex;
+        align-items: center;
+
+        & + & {
+            margin-top: .75rem;
+        }
+
+        .message-out & {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &-text,
+    &-gallery {
+        overflow: hidden;
+        margin-right: .25rem;
+
+        .message-out & {
+            margin-left: .25rem;
+            margin-right: 0;
+        }
+    }
+
+    &-text {
+        background: $message-bg;
+        border-radius: $message-border-radius;
+        padding: $message-padding-y $message-padding-x;
+        color: $message-color;
+
+        .message-out & {
+            background: $message-bg-outgoing;
+            border-radius: $message-border-radius;
+            color: color-contrast($message-bg-outgoing);
+        }
+    }
+
+    &-content:not(:last-child) .message-text {
+        border-bottom-left-radius: .25rem;
+
+        .message-out & {
+            border-bottom-left-radius: $message-border-radius;
+            border-bottom-right-radius: .25rem;
+        }
+    }
+
+    &-content:not(:first-child) .message-text {
+        border-top-left-radius: math.div($message-border-radius, 4);
+
+        .message-out & {
+            border-top-left-radius: $message-border-radius;
+            border-top-right-radius: math.div($message-border-radius, 4);
+        }
+    }
+
+    &-footer {
+        line-height: $line-height-sm;
+        margin-top: .25rem;
+
+        .message-out & {
+            text-align: right;
+        }
+    }
+}
+
+.message-inner {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1;
+
+    @include media-breakpoint-up(lg) {
+        max-width: 70%;
+    }
+
+    @include media-breakpoint-up(xl) {
+        max-width: 50%;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        max-width: 45%;
+    }
+}
+

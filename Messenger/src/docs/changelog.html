@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">Changelog</h1>
+                <p class="lead">See what's new added, changed, fixed, improved or updated in the latest template versions.</p>
+            </header>
+
+            <h3 class="display-2" data-create-link="#">2.0 - 06 July, 2021</h3>
+            <ul>
+                <li class="my-2">New design and pages</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">Bootstrap 5.0.1</li>
+                <li class="my-2">Removed jQuery dependency</li>
+            </ul>
+
+            <hr class="my-10">
+
+            <h3 class="display-2" data-create-link="#">1.1 - 08 February, 2020</h3>
+            <ul>
+                <li class="my-2"><span class="font-bold text-basic-inverse">New: </span> Settings Page</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">New: </span> Favourite friends</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">New: </span> Search in chat</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">New: </span> Chat topic</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">New: </span> Zoom Plugin</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">Enhanced: </span> Design of messages</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">Enhanced: </span> Navigation</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">Enhanced: </span> "Send message" form</li>
+                <li class="my-2"><span class="font-bold text-basic-inverse">Updated: </span> Updated dependencies. Included <code>gulpfile.json</code> and <code>package.json</code>.</li>
+                <li class="my-2">Other minor bug fixes and improvements</li>
+            </ul>
+
+            <hr class="my-10">
+
+            <h3 class="display-2" data-create-link="#">1.0 - 01 December, 2019</h3>
+            <ul>
+                <li class="my-2"><span class="font-bold text-basic-inverse">Initial Release</li>
+            </ul>
+
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">Tables</h1>
+                <p class="lead">Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap.</p>
+                <p class="lead"><a href="https://getbootstrap.com/docs/5.0/content/tables/" target="_blank">Bootstrap documentation →</a></p>
+            </header>
+
+            <h3 class="display-2" data-create-link="#">Overview</h3>
+            <p>Using the most basic table markup, here’s how .table-based tables look in Bootstrap.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8 rounded-bottom">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <span class="badge bg-primary">Primary</span>
+                            <span class="badge bg-secondary">Secondary</span>
+                            <span class="badge bg-success">Success</span>
+                            <span class="badge bg-danger">Danger</span>
+                            <span class="badge bg-warning text-dark">Warning</span>
+                            <span class="badge bg-info text-dark">Info</span>
+                            <span class="badge bg-light text-dark">Light</span>
+                            <span class="badge bg-dark">Dark</span>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Variants</h3>
+            <p>Use contextual classes to color tables, table rows or individual cells.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <!-- On tables -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Class</th>
+                                <th scope="col">Heading</th>
+                                <th scope="col">Heading</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Default</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                            <tr class="table-primary">
+                                <th scope="row">Primary</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                            <tr class="table-secondary">
+                                <th scope="row">Secondary</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                            <tr class="table-success">
+                                <th scope="row">Success</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <th scope="row">Danger</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <th scope="row">Warning</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">Info</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                            <tr class="table-light">
+                                <th scope="row">Light</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                            <tr class="table-dark">
+                                <th scope="row">Dark</th>
+                                <td>Cell</td>
+                                <td>Cell</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <!-- On tables -->
+                            <table class="table-primary">...</table>
+                            <table class="table-secondary">...</table>
+                            <table class="table-success">...</table>
+                            <table class="table-danger">...</table>
+                            <table class="table-warning">...</table>
+                            <table class="table-info">...</table>
+                            <table class="table-light">...</table>
+                            <table class="table-dark">...</table>
+
+                            <!-- On rows -->
+                            <tr class="table-primary">...</tr>
+                            <tr class="table-secondary">...</tr>
+                            <tr class="table-success">...</tr>
+                            <tr class="table-danger">...</tr>
+                            <tr class="table-warning">...</tr>
+                            <tr class="table-info">...</tr>
+                            <tr class="table-light">...</tr>
+                            <tr class="table-dark">...</tr>
+
+                            <!-- On cells (`td` or `th`) -->
+                            <tr>
+                                <td class="table-primary">...</td>
+                                <td class="table-secondary">...</td>
+                                <td class="table-success">...</td>
+                                <td class="table-danger">...</td>
+                                <td class="table-warning">...</td>
+                                <td class="table-info">...</td>
+                                <td class="table-light">...</td>
+                                <td class="table-dark">...</td>
+                            </tr>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Accented tables</h3>
+            <hr class="my-10">
+
+            <h4 class="display-3" data-create-link="#">Striped rows</h4>
+            <p>Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <table class="table table-striped">
+                        <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+
+                    </table>
+                </div>
+
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <table class="table table-striped">
+                                ...
+                            </table>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <table class="table table-primary table-striped">
+                        <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+
+                    </table>
+                </div>
+
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <table class="table table-primary table-striped">
+                                ...
+                            </table>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h4 class="display-3" data-create-link="#">Hoverable rows</h4>
+            <p>Add <code>.table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <table class="table table-hover">
+                        <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+
+                    </table>
+                </div>
+
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <table class="table table-hover">
+                                ...
+                            </table>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Bordered tables</h3>
+            <p>Add <code>.table-bordered</code> for borders on all sides of the table and cells.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <table class="table table-bordered">
+                        <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+
+                    </table>
+                </div>
+
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <table class="table table-bordered">
+                                ...
+                            </table>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

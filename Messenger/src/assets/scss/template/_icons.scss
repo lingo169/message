@@ -1,0 +1,48 @@
+//
+// Icons
+//
+
+$icon-sizes: (
+    '': 1rem,
+    xl: 1.5rem,
+    lg: 1.125rem,
+    sm: .875rem,
+    xs: .75rem
+);
+
+.icon {
+    display: inline-block;
+    line-height: 1;
+
+    &.icon-badged {
+        position: relative;
+
+        & > svg {
+            mask-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxNCAxNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTQgMTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGQ9Ik03LDAuNUM3LDAuMyw3LDAuMiw3LDBIMHYxNGgxNFY3Yy0wLjIsMC0wLjMsMC0wLjUsMEM5LjksNyw3LDQuMSw3LDAuNXoiLz4NCjwvc3ZnPg0K");
+            mask-size: 100% 100%;
+        }
+
+        .badge {
+            position: absolute;
+            bottom: 60%;
+            left: 60%;
+        }
+    }
+}
+
+//
+// Icon Sizes
+//
+
+@each $size, $value in $icon-sizes {
+
+    $prefix: "";
+
+    @if ($size != "") {
+        $prefix: "-"
+    }
+
+    .icon#{$prefix + $size} > svg {
+        @include size($value, $value)
+    }
+}

@@ -1,0 +1,27 @@
+/**
+ * Custom variables followed by template variables followed by Bootstrap variables
+ * to ensure cascade of styles.
+ */
+
+@use "sass:math";
+
+// Bootstrap functions
+@import '../../../node_modules/bootstrap/scss/functions';
+
+// Template functions
+@import 'template/functions';
+
+// Custom variables
+@import 'user-variables.dark';
+
+// Template variables
+@import 'template/variables.dark';
+
+// Bootstrap core
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+// Template core
+@import 'template/template';
+
+// Custom core
+@import 'user';

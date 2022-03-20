@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+@@include("partials/head.html")
+<body class="doc-body" data-bs-spy="scroll" data-bs-target="#docs-sub-navigation">
+
+    <!-- Nav -->
+    @@include("partials/nav.html")
+
+    <div class="doc-layout">
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-left.html")
+
+        <!-- Main -->
+        <div class="doc-content flex-1 py-10 px-10">
+
+            <header class="pb-10 mb-10 border-bottom">
+                <h1 class="display-1">Cards</h1>
+                <p class="lead">Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
+                <p class="lead"><a href="https://getbootstrap.com/docs/5.0/components/card/" target="_blank">Bootstrap documentation →</a></p>
+            </header>
+
+            <h3 class="display-2" data-create-link="#">Examples</h3>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="card" style="width: 20rem;">
+                        <img src="@@webRoot/assets/img/demos/light.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title">Card Title</h4>
+                            <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card Title</h4>
+                                    <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Header and footer</h3>
+            <p>Add an optional header and/or footer within a card.</p>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Special Title</h4>
+                            <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            2 days ago
+                        </div>
+                    </div>
+                </div>
+                <pre class="bg-dark hide-scrollbar rounded-bottom doc-code-example m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <div class="card">
+                                <div class="card-header">
+                                    Featured
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Special Title</h4>
+                                    <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    2 days ago
+                                </div>
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Custom Content</h3>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <!-- Card -->
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <div class="row gx-5">
+
+                                <div class="col-auto">
+                                    <!-- Avatar -->
+                                    <div class="avatar-group-trigon avatar-group-trigon-sm">
+                                        <div class="avatar avatar-sm">
+                                            <img class="avatar-img" src="@@webRoot/assets/img/avatars/7.jpg" alt="#">
+                                        </div>
+                                        <div class="avatar avatar-sm">
+                                            <img class="avatar-img" src="@@webRoot/assets/img/avatars/9.jpg" alt="#">
+                                        </div>
+                                        <div class="avatar avatar-sm">
+                                            <span class="avatar-text bg-primary">D</span>
+                                        </div>
+                                    </div>
+                                    <!-- Avatar -->
+                                </div>
+
+                                <div class="col">
+                                    <!-- Title -->
+                                    <div class="d-flex mb-3">
+                                        <h5 class="me-auto mb-0">Don Knight</h5>
+                                        <span class="text-muted extra-small ms-2">08:35 PM</span>
+                                    </div>
+                                    <!-- Title -->
+
+                                    <!-- Text -->
+                                    <div class="d-flex align-items-center">
+                                        <div class="line-clamp me-auto">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</div>
+
+                                        <!-- Badge -->
+                                        <div class="badge badge-circle bg-primary ms-5">
+                                            <span>5</span>
+                                        </div>
+                                    </div>
+                                    <!-- Text -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Card -->
+                </div>
+                <pre class="bg-dark hide-scrollbar doc-code-example rounded-bottom m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <!-- Card -->
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <div class="row gx-5">
+
+                                        <div class="col-auto">
+                                            <!-- Avatar -->
+                                            <div class="avatar-group-trigon avatar-group-trigon-sm">
+                                                <div class="avatar avatar-sm">
+                                                    <img class="avatar-img" src="@@webRoot/assets/img/avatars/7.jpg" alt="#">
+                                                </div>
+                                                <div class="avatar avatar-sm">
+                                                    <img class="avatar-img" src="@@webRoot/assets/img/avatars/9.jpg" alt="#">
+                                                </div>
+                                                <div class="avatar avatar-sm">
+                                                    <span class="avatar-text bg-primary">D</span>
+                                                </div>
+                                            </div>
+                                            <!-- Avatar -->
+                                        </div>
+
+                                        <div class="col">
+                                            <!-- Title -->
+                                            <div class="d-flex mb-3">
+                                                <h5 class="me-auto mb-0">Don Knight</h5>
+                                                <span class="text-muted extra-small ms-2">08:35 PM</span>
+                                            </div>
+                                            <!-- Title -->
+
+                                            <!-- Text -->
+                                            <div class="d-flex align-items-center">
+                                                <div class="line-clamp me-auto">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</div>
+
+                                                <!-- Badge -->
+                                                <div class="badge badge-circle bg-primary ms-5">
+                                                    <span>5</span>
+                                                </div>
+                                            </div>
+                                            <!-- Text -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+            <h3 class="display-2" data-create-link="#">Profile</h3>
+
+            <!-- Example -->
+            <article class="my-10">
+                <div class="bg-light rounded-top p-8">
+                    <!-- Card -->
+                    <div class="card border-0">
+                        <div class="profile">
+                            <div class="profile-img rounded-top text-primary">
+                                @@include("../assets/img/core/card-header.svg")
+                            </div>
+
+                            <div class="profile-body">
+                                <div class="avatar avatar-xl border border-4 border-body">
+                                    <img class="avatar-img" src="@@webRoot/assets/img/avatars/1.jpg" alt="">
+                                </div>
+
+                                <h4 class="mb-1">William Wright</h4>
+                                <p>last seen 5 minutes ago</p>
+                            </div>
+
+                            <div class="card-body border-top">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="row align-items-center gx-6">
+                                            <div class="col">
+                                                <h5>Location</h5>
+                                                <p>USA, Houston</p>
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="btn btn-sm btn-icon btn-dark">
+                                                    @@include("../assets/img/icons/globe.svg")
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row align-items-center gx-6">
+                                            <div class="col">
+                                                <h5>E-mail</h5>
+                                                <p>william@studio.com</p>
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="btn btn-sm btn-icon btn-dark">
+                                                    @@include("../assets/img/icons/mail.svg")
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card -->
+                </div>
+                <pre class="bg-dark hide-scrollbar doc-code-example rounded-bottom m-0 p-8">
+                    <code class="language-markup">
+                        <script type="prism-html-markup">
+                            <!-- Card -->
+                            <div class="card border-0">
+                                <div class="profile">
+                                    <div class="profile-img rounded-top text-primary">
+                                        @@include("../assets/img/core/card-header.svg")
+                                    </div>
+
+                                    <div class="profile-body">
+                                        <div class="avatar avatar-xl border border-4 border-body">
+                                            <img class="avatar-img" src="assets/img/avatars/1.jpg" alt="">
+                                        </div>
+
+                                        <h4 class="mb-1">William Wright</h4>
+                                        <p>last seen 5 minutes ago</p>
+                                    </div>
+
+                                    <div class="card-body border-top">
+                                       ...
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </script>
+                    </code>
+                </pre>
+            </article>
+            <!-- Example -->
+
+        </div>
+        <!-- Main -->
+
+        <!-- Sidebar -->
+        @@include("partials/sidebar-right.html")
+    </div>
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+</body>
+</html>

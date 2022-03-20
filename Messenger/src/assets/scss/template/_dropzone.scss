@@ -1,0 +1,45 @@
+//
+// Dropzone
+//
+
+[data-dz-size] > strong {
+    font-weight: normal;
+}
+
+.dropzone-image-preview {
+    display: none;
+}
+
+.dz-image-preview .dropzone-file-preview {
+    display: none;
+}
+
+.dz-image-preview .dropzone-image-preview {
+    display: block;
+}
+
+.dz-preview {
+    border-top-left-radius: $border-radius-xl;
+    border-top-right-radius: $border-radius-xl;
+    position: relative;
+    display: flex;
+
+    &.dz-preview-moved {
+       margin-bottom: - #{(($input-line-height * $input-btn-font-size) + ($input-padding-y * 2) + rem($input-height-border)) - (math.div($grid-gutter-width, 5) * 2)};
+
+        & + .chat-form {
+            &::before {
+                content: "";
+                display: block;
+                height: $border-width;
+                background: $secondary;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+//@debug (($input-line-height * $input-btn-font-size) + ($input-padding-y * 2) + rem($input-height-border)) - (($grid-gutter-width / 5) * 2);

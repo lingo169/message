@@ -1,0 +1,110 @@
+body {
+    letter-spacing: -0.003125rem;
+}
+
+a {
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+
+    h1 > &, .h1 > &,
+    h2 > &, .h2 > &,
+    h3 > &, .h3 > &,
+    h4 > &, .h4 > &,
+    h5 > &, .h5 > &,
+    h6 > &, .h6 > & {
+        color: $headings-color;
+    }
+
+    &.text-body:hover {
+        opacity: .8;
+    }
+}
+
+a.text-muted:hover {
+    opacity: .8;
+}
+
+@each $color, $value in $theme-colors {
+    .text-#{$color} {
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+            color: $value;
+        }
+    }
+}
+
+.text-dark {
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+        color: $gray-900;
+    }
+}
+
+.text-dark {
+    color: $headings-color !important;
+}
+
+
+p:last-child,
+ul:last-child,
+ol:last-child,
+blockquote:last-child {
+    margin-bottom: 0;
+}
+
+h5, h6 {
+    margin-bottom: .125rem;
+}
+
+.extra-small {
+    font-size: $extra-small-font-size;
+}
+
+//
+// Hr
+//
+
+hr.hr-bold:not([size]) {
+    height: $hr-height-bold;
+}
+
+//
+// Blockquote
+//
+
+.blockquote {
+    border-left: $border-width solid currentColor;
+    padding: 0 1rem;
+}
+
+.blockquote-footer {
+    margin-top: 0;
+
+    &:before {
+        content: "";
+    }
+}
+
+//
+// Typing Animation
+//
+
+.typing-dots span {
+    opacity: 0;
+
+    &:nth-child(1) {
+        animation: 1s type-animation infinite .33333s;
+    }
+
+    &:nth-child(2) {
+        animation: 1s type-animation infinite .66666s;
+    }
+
+    &:nth-child(3) {
+        animation: 1s type-animation infinite .99999s;
+    }
+}
+
+@keyframes type-animation {
+    50% {
+        opacity: 1
+    }
+}

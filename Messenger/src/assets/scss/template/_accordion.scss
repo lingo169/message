@@ -1,0 +1,54 @@
+//
+// Accordion
+//
+
+.accordion-button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+
+    &:not(.collapsed) {
+        box-shadow: none;
+    }
+}
+
+.accordion-item:first-of-type .accordion-button,
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-radius: 0;
+}
+
+.accordion-header {
+    padding: $accordion-padding-y $accordion-padding-x;
+    border-top: $accordion-border-width solid $accordion-border-color;
+}
+
+.accordion-item:first-child .accordion-header {
+    border-top: 0;
+}
+
+.accordion-item:not(:first-child) .accordion-header {
+    margin-top: -$accordion-border-width;
+}
+
+.accordion-collapse {
+    border: 0;
+    border-top: $accordion-border-width solid $accordion-border-color;
+}
+
+// Flush accordion items
+//
+// Remove borders and border-radius to keep accordion items edge-to-edge.
+
+.accordion-flush {
+    border: 0;
+
+    .accordion-body,
+    .accordion-header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .accordion-collapse {
+        border-top: $accordion-border-width solid $accordion-border-color;
+    }
+}

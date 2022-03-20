@@ -1,0 +1,40 @@
+//
+// Badges
+//
+
+.badge-circle {
+    position: relative;
+    border-radius: $border-radius-pill;
+    height: calc(1em + #{($badge-padding-y * 2)});
+    padding: $badge-padding-y;
+
+    > i,
+    > span {
+        display: block;
+        min-width: 1em;
+    }
+
+    svg {
+        @include size(1em);
+    }
+}
+
+//
+// Badge Sizes
+//
+
+.badge-xl {
+    @include badge-size($badge-xl-padding-y, $badge-xl-padding-x, $badge-xl-font-size);
+}
+
+.badge-lg {
+    @include badge-size($badge-lg-padding-y, $badge-lg-padding-x, $badge-lg-font-size);
+}
+
+.badge-sm {
+    @include badge-size($badge-sm-padding-y, $badge-sm-padding-x, $badge-sm-font-size);
+}
+
+.badge-xs {
+    @include badge-size($badge-xs-padding-y, $badge-xs-padding-x, $badge-xs-font-size);
+}

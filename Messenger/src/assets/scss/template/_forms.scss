@@ -1,0 +1,49 @@
+//
+// Forms
+//
+
+@import "forms/labels";
+@import "forms/form-check";
+
+//
+// Placeholder
+//
+
+.form-control {
+
+    &::-webkit-input-placeholder {
+        color: $input-placeholder-color;
+    }
+
+    &::-moz-placeholder {
+        color: $input-placeholder-color;
+    }
+
+    &:-moz-placeholder {
+        color: $input-placeholder-color;
+    }
+
+    &::placeholder {
+        color: $input-placeholder-color;
+    }
+
+    &:-ms-input-placeholder {
+        color: $input-placeholder-color;
+    }
+}
+
+.form-floating label {
+    color: $input-placeholder-color;
+}
+
+//
+// Firefox fix
+//
+
+:focus {
+    outline: none;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}

@@ -1,0 +1,36 @@
+//
+// Modal
+//
+
+.modal-gx {
+    margin-left: $modal-inner-padding;
+    margin-right: $modal-inner-padding;
+}
+
+.modal-gy {
+    margin-top: $modal-inner-padding;
+    margin-bottom: $modal-inner-padding;
+}
+
+.modal-gx-n {
+    margin-left: - $modal-inner-padding;
+    margin-right: - $modal-inner-padding;
+}
+
+.modal-px {
+    padding-left: $modal-inner-padding;
+    padding-right: $modal-inner-padding;
+}
+
+.modal-py {
+    padding-top: $modal-inner-padding;
+    padding-bottom: $modal-inner-padding;
+}
+
+.modal-content {
+    box-shadow: $box-shadow-lg;
+}
+
+.modal-header .btn-close {
+    margin: -$btn-close-width;
+}

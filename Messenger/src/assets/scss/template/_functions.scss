@@ -1,0 +1,42 @@
+//
+// Functions
+//
+
+//
+// PX to Rem
+//
+
+@function rem($pixels, $context: 16) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return math.div($pixels, $context)  * 1rem;
+}
+
+//
+// Simple Sass Mixin for Width and Height
+//
+
+@mixin size($width, $height: $width) {
+    height: $height;
+    width: $width;
+}
+
+//
+// Convert an RGBA color to its RGB look-alike
+//
+
+@function rgba-to-rgb($rgba, $background: $body-bg) {
+    @return mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%);
+}
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

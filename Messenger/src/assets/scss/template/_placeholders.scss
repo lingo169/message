@@ -1,0 +1,14 @@
+//
+// Placeholders
+//
+
+.placeholder {
+    border-radius: $border-radius-sm * 0.5;
+}
+
+.placeholder-img {
+    cursor: wait;
+    animation: placeholder-glow 2s ease-in-out infinite;
+    opacity: $placeholder-opacity-max;
+    fill: currentColor;
+}

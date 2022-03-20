@@ -1,0 +1,83 @@
+//
+// Card
+//
+
+.card-shadow {
+
+    & > .card-body,
+    & > .card-header,
+    & > .card-footer {
+        position: relative;
+        z-index: 1;
+    }
+
+    &::after,
+    &::before {
+        position: absolute;
+        content: "";
+    }
+
+    &::after {
+        background: rgba($primary, .1);
+        filter: blur(130.478px);
+        z-index: -1;
+        top: 64px;
+        left: 0;
+        right: 0;
+        bottom: -64px;
+        border-radius: 48px;
+    }
+
+    &::before {
+        background: rgba($body-bg, .5);
+        border-radius: $border-radius;
+        top: 8px;
+        left: 10px;
+        right: 10px;
+        bottom: -8px;
+    }
+}
+
+//
+// Card list
+//
+
+.card-list {
+
+    .card + .card {
+        margin-top: 1rem;
+    }
+}
+
+//
+// Profile
+//
+
+.profile {
+    position: relative;
+
+    &-img {
+        overflow: hidden;
+    }
+
+    &-body {
+        text-align: center;
+        padding-bottom: $card-spacer-y;
+    }
+
+    .avatar {
+        border: 4px solid $body-bg;
+        margin-left: auto;
+        margin-right: auto;
+
+        @each $size, $value in $avatar-sizes {
+            $prefix: "";
+            @if ($size != "") {$prefix: "-"}
+
+            &.avatar#{$prefix + $size} {
+                margin-top: -$value * .5;
+                margin-bottom: $value * .1;
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+//
+// Labels
+//
+
+.stretched-label {
+    position: absolute;
+    @include size(100%);
+    left: 0;
+    top: 0;
+}
