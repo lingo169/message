@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../../nginx-1.18.0/charclient/charclient.iml" filepath="$PROJECT_DIR$/../../../../nginx-1.18.0/charclient/charclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../nginx-1.18.0/examples/examples.iml" filepath="$PROJECT_DIR$/../../../../nginx-1.18.0/examples/examples.iml" />
+    </modules>
+  </component>
+</project>
