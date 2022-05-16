@@ -14,7 +14,7 @@ public interface BaseController {
             bindingResult.getAllErrors().forEach(o -> {
                 log.error(" error message is: {}", o.getDefaultMessage());
             });
-            throw new CustomRuntimeException(ErrorCode.ERR_CODE_INVALIDATION, ErrorCode.ERR_CODE_INVALIDATION.getMessage());
+            throw new CustomRuntimeException(ErrorCode.ERR_CODE_INVALIDATION, bindingResult.getAllErrors().get(0).getDefaultMessage());
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.lin.controller.req;
 
+import com.lin.common.rest.ReqMsg;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -10,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 @ApiModel(description = "注册信息")
 @Getter
 @Setter
-public class CustomerReqMsg extends ReqMsg{
+public class CustomerReqMsg extends ReqMsg {
 
     @ApiModelProperty(value = "账号", required = true)
     @NotBlank(message = "账号不能为空")

@@ -2,12 +2,12 @@ package com.lin.controller;
 
 import com.lin.common.error.CustomRuntimeException;
 import com.lin.common.error.ErrorCode;
+import com.lin.common.rest.ResMsg;
 import com.lin.common.utils.CommonUtils;
 import com.lin.controller.req.CustomerReqMsg;
 import com.lin.controller.req.LoginReqMsg;
 import com.lin.controller.req.ModifyPassReqMsg;
 import com.lin.controller.res.LoginResMsg;
-import com.lin.controller.res.ResMsg;
 import com.lin.service.login.LoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -66,7 +66,7 @@ public class LoginController implements BaseController {
         return urs.withData(i);
     }
 
-    @ApiOperation("查询账户是否存在")
+    @ApiOperation("忘记密码")
     @ApiImplicitParam(paramType = "path", name = "email", value = "邮件地址", required = true)
     @ApiResponses({
             @ApiResponse(code = 200,message = "data返回true则发送邮箱成功，否则发送邮箱失败")

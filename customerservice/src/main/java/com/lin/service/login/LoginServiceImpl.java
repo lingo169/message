@@ -1,12 +1,12 @@
 package com.lin.service.login;
 
 import com.google.gson.Gson;
+import com.lin.common.constant.CommonConstant;
+import com.lin.common.constant.RedisConstant;
 import com.lin.common.error.CustomRuntimeException;
 import com.lin.common.error.ErrorCode;
 import com.lin.common.utils.BeanCopyUtils;
 import com.lin.common.utils.DateUtils;
-import com.lin.common.constant.CommonConstant;
-import com.lin.common.constant.RedisConstant;
 import com.lin.common.utils.RedisSerializableUtils;
 import com.lin.common.utils.security.RSAUtils;
 import com.lin.common.utils.security.SecuritySHA1Utils;
@@ -61,7 +61,8 @@ public class LoginServiceImpl implements LoginService {
         String dpass = RSAUtils.privateDecrypt(password, pk);
         log.info("priv");
         log.info(dpass);
-        Customer c = customerMapper.byCustomerNo(customerNo);
+        Customer c = customerMapper.selectRelationshipByCustomerId(customerNo);
+        //Customer c = customerService.relationshipByCustomerId(data.getSender());
         if (c == null) {
             throw new CustomRuntimeException(ErrorCode.LOGIN_NOT_EXISTS, ErrorCode.LOGIN_NOT_EXISTS.getMessage());
         }
@@ -70,8 +71,9 @@ public class LoginServiceImpl implements LoginService {
         if (!StringUtils.equals(c.getPassword(), sha1pass)) {
             throw new CustomRuntimeException(ErrorCode.LOGIN_ERROR, ErrorCode.LOGIN_ERROR.getMessage());
         }
-        LoginResMsg urm = BeanCopyUtils.beanCopy(c, LoginResMsg.class);
-        urm = setSession(c);
+        //返回是不带密码
+        c.setPassword(null);
+        LoginResMsg urm = setSession(c);
         return urm;
     }
 
@@ -155,7 +157,7 @@ public class LoginServiceImpl implements LoginService {
         String token = BeanCopyUtils.getUUID32();
         String userJson = gs.toJson(user);
         RBucket rb = redissonClient.getBucket(RedisConstant.WDP_TOKEN + token);
-        rb.expire(Long.valueOf(sessionTimeout), TimeUnit.SECONDS);
+        rb.expire(Long.valueOf(sessionTimeout), TimeUnit.DAYS);
         rb.set(userJson);
 //        redissonClient.getBucket(RedisConstant.WDP_TOKEN + token, userJson, Long.valueOf(sessionTimeout), TimeUnit.SECONDS).set();
         log.info("存入redis的登陆信息key为：{}，内容大小为：{}", RedisConstant.WDP_TOKEN + token, userJson.length());

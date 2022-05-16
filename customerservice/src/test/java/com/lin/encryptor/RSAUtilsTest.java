@@ -1,8 +1,6 @@
 package com.lin.encryptor;
 
-import com.lin.common.constant.CommonConstant;
 import com.lin.common.error.CustomRuntimeException;
-import com.lin.common.utils.RedisSerializableUtils;
 import com.lin.common.utils.security.RSAUtils;
 import com.lin.common.utils.security.SecuritySHA1Utils;
 import org.apache.commons.codec.digest.DigestUtils;

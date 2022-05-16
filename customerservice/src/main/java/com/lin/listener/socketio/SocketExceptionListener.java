@@ -3,7 +3,6 @@ package com.lin.listener.socketio;
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.listener.ExceptionListenerAdapter;
 import com.lin.common.constant.SocketIoConstant;
-import com.lin.config.socketio.SocketioConfig;
 import com.lin.dto.socketio.ChatObject;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
@@ -20,7 +19,8 @@ public class SocketExceptionListener extends ExceptionListenerAdapter {
         log.error(e.getMessage(), e);
         ChatObject co=new ChatObject();
         co.setContent(e.getMessage());
-        client.getNamespace().getBroadcastOperations().sendEvent(SocketIoConstant.CHAT_EVENT, co);
+        //client.getNamespace().getBroadcastOperations().sendEvent(SocketIoConstant.CHAT_EVENT, co);
+        client.sendEvent(SocketIoConstant.CHAT_EVENT_NAME, co);
     }
 
     @Override

@@ -1,36 +1,30 @@
 //package com.lin.config.socketio;
 //
-//import com.corundumstudio.socketio.AckRequest;
 //import com.corundumstudio.socketio.SocketIOClient;
 //import com.corundumstudio.socketio.SocketIOServer;
 //import com.corundumstudio.socketio.annotation.OnConnect;
 //import com.corundumstudio.socketio.annotation.OnDisconnect;
+//import com.lin.common.constant.CommonConstant;
+//import com.lin.common.error.CustomRuntimeException;
+//import com.lin.common.error.ErrorCode;
+//import com.lin.config.RequestUtils;
 //import com.lin.dto.socketio.ChatObject;
+//import com.lin.po.Customer;
+//import com.lin.service.customer.CustomerService;
 //import org.redisson.api.RedissonClient;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 //import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Component;
 //
-//import java.util.UUID;
+//import java.util.concurrent.atomic.AtomicBoolean;
 //
-//public abstract class AbstractSocketEventHandler {
+//@Component
+//public class AbstractSocketEventHandler {
 //
-//    private static Logger LOG = LoggerFactory.getLogger(AbstractSocketEventHandler.class);
-//
-//    @Autowired
-//    private SocketIOServer socketIOServer;
-//
-//    @Autowired
-//    private ClientUserCache clientUserCache;
-//
-//    @Autowired
-//    private RedissonClient redissonClient;
+//    private static Logger log = LoggerFactory.getLogger(AbstractSocketEventHandler.class);
 //
 //    public AbstractSocketEventHandler() {
-//    }
-//
-//    public AbstractSocketEventHandler(SocketIOServer socketIOServer) {
-//        this.socketIOServer = socketIOServer;
 //    }
 //
 //    /**
@@ -41,34 +35,22 @@
 //     */
 //    @OnConnect
 //    public void onConnect(SocketIOClient client) {
-//        LOG.info("Connect OK.");
-//        LOG.info("Session ID  : {}", client.getSessionId());
-//        LOG.info("HttpHeaders : {}", client.getHandshakeData().getHttpHeaders());
-//        LOG.info("UrlParams   : {}", client.getHandshakeData().getUrlParams());
-//        /*String token = client.getHandshakeData().getSingleUrlParam("token");
-//        RBucket<String> bucket = redissonClient.getBucket(RedisConstant.WDP_TOKEN + token);
-//        String data = bucket.get();
-//        if (StringUtils.isEmpty(data)) {
-//            LOG.info("**********客户端：" + token + "无权限**********");
-//            client.disconnect();//校验token示例
-//            return;
-//        }*/
-//        String userId = client.getHandshakeData().getSingleUrlParam("userId");
-//        LOG.info("**********客户端：：：" + userId + "你成功的连接上了服务器哦**********");
-//        UUID sessionId = client.getSessionId();
-//        if (userId != null) {
-//            clientUserCache.saveClient(userId, sessionId, client);
+//        log.info("Connect OK.");
+//        log.info("Session ID  : {}", client.getSessionId());
+//        log.info("HttpHeaders : {}", client.getHandshakeData().getHttpHeaders());
+//        log.info("UrlParams   : {}", client.getHandshakeData().getUrlParams());
+//        log.info("**********客户端：" + client.getHandshakeData().getSingleUrlParam(CommonConstant.TOKEN) + "你成功的连接上了服务器哦**********");
+//        //查看好友关系是否存在
+//        Customer c = RequestUtils.getCustomer(client.getHandshakeData().getSingleUrlParam(CommonConstant.TOKEN));
+//        if (null == c) {
+//            log.error("无权限连接，请登录后再链接。");
+//            client.disconnect();
+//        } else {
+//            joinRoom(client, c);
 //        }
+//        //Customer c = customerService.relationshipByCustomerId(data.getSender());
+//
 //    }
-//
-//    public abstract void handler(SocketIOClient client, ChatObject data, AckRequest ackSender);
-//
-////    @OnEvent("message")
-////    public void onEvent(SocketIOClient client, ChatObject data, AckRequest ackSender) {
-////        LOG.info("send push_data_event");
-////        this.handler(client, data, ackSender);
-//////        client.sendEvent("push_data_event", "connection:ok");
-////    }
 //
 //    /**
 //     * 添加@OnDisconnect事件，客户端断开连接时调用，刷新客户端信息
@@ -77,13 +59,24 @@
 //     */
 //    @OnDisconnect
 //    public void onDisconnect(SocketIOClient client) {
-//        LOG.debug("Disconnect OK.");
-//        LOG.debug("Session ID  : {}", client.getSessionId());
-//        String userId = client.getHandshakeData().getSingleUrlParam("userId");
-//        LOG.info("**********客户端：" + userId + "已断开连接**********");
-//        if (userId != null) {
-//            clientUserCache.deleteSessionClient(userId, client.getSessionId());
-//            client.disconnect();
-//        }
+//        log.debug("Disconnect OK.");
+//        log.debug("Session ID  : {}", client.getSessionId());
+//        Customer c = RequestUtils.getCustomer(client.getHandshakeData().getSingleUrlParam(CommonConstant.TOKEN));
+//        leaveRoom(client, c);
+//        log.info("**********客户端：" + client.getHandshakeData().getSingleUrlParam("userId") + "已断开连接**********");
+//    }
+//
+//    private void joinRoom(SocketIOClient client, Customer c) {
+//        c.getCustomerRels().forEach(item -> {
+//            log.info("joinRoom is:{}", item.getCustomerGroupId());
+//            client.joinRoom(item.getCustomerGroupId() + "");
+//        });
+//    }
+//
+//    private void leaveRoom(SocketIOClient client, Customer c) {
+//        c.getCustomerRels().forEach(item -> {
+//            log.info("leaveRoom data.getRoom():{}", item.getCustomerGroupId());
+//            client.leaveRoom(item.getCustomerGroupId() + "");
+//        });
 //    }
 //}

@@ -26,25 +26,21 @@
   </sql>
 
   <select id="selectExistsByCustomerId" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    SELECT CRS.CUSTOMER_ID
-    FROM CS_CUSTOMER_RELS CRS
-    WHERE CRS.REL_FLAG = '0'
-    AND CRS.STATUS='1'
-    AND exists (
-        SELECT CR.CUSTOMER_GROUP_ID
-        FROM CS_CUSTOMER_RELS CR
-        WHERE CR.REL_FLAG = '0'
-        AND CR.STATUS='1'
-        AND CRS.CUSTOMER_GROUP_ID = CR.CUSTOMER_GROUP_ID
-        AND CR.CUSTOMER_ID = #{customerId,jdbcType=BIGINT}
-    )
+    SELECT
+	CRS.ID,CRS.CUSTOMER_ID,CRS.CUSTOMER_GROUP_ID,CRS.STATUS
+    FROM
+        CS_CUSTOMER_RELS CRS
+    WHERE
+        CRS.REL_FLAG = '0'
+    AND CRS.CUSTOMER_ID = #{customerId,jdbcType=BIGINT}
+    AND CRS.CUSTOMER_REL_ID = #{customerRelId,jdbcType=BIGINT}
   </select>
 
-  <select id="selecByCIdAndGId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selecByCIdAndGId" parameterType="com.lin.po.CustomerRels" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List" />
     FROM CS_CUSTOMER_RELS CRS
-    WHERE CR.CUSTOMER_ID = #{customerId,jdbcType=BIGINT} and CRS.CUSTOMER_GROUP_ID = #{customerGroupId,jdbcType=BIGINT} and REL_FLAG = '0'
+    WHERE CRS.CUSTOMER_ID = #{customerId,jdbcType=BIGINT} and CRS.CUSTOMER_GROUP_ID = #{customerGroupId,jdbcType=BIGINT} and CRS.REL_FLAG = #{relFlag,jdbcType=VARCHAR}
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -55,16 +51,16 @@
   </select>
 
   <insert id="insertBatch" parameterType="com.lin.po.CustomerRels" >
-    insert into cs_customer_rels (ID, CUSTOMER_ID, CUSTOMER_GROUP_ID,CUSTOMER_REL_ID
+    insert into cs_customer_rels (ID, CUSTOMER_ID, CUSTOMER_GROUP_ID,CUSTOMER_REL_ID,
     OPT_FLAG, LEADER, REL_FLAG,
     STATUS, CREATE_ID, CREATE_TIME,
     UPDATE_ID, UPDATE_TIME)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{id,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{customerGroupId,jdbcType=BIGINT},#{customerRelId,jdbcType=BIGINT}
-      #{optFlag,jdbcType=VARCHAR}, #{leader,jdbcType=VARCHAR}, #{relFlag,jdbcType=VARCHAR},
-      #{status,jdbcType=VARCHAR}, #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR},
-      #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR})
+      (#{item.id,jdbcType=BIGINT}, #{item.customerId,jdbcType=BIGINT}, #{item.customerGroupId,jdbcType=BIGINT},#{item.customerRelId,jdbcType=BIGINT},
+      #{item.optFlag,jdbcType=VARCHAR}, #{item.leader,jdbcType=VARCHAR}, #{item.relFlag,jdbcType=VARCHAR},
+      #{item.status,jdbcType=VARCHAR}, #{item.createId,jdbcType=VARCHAR}, #{item.createTime,jdbcType=VARCHAR},
+      #{item.updateId,jdbcType=VARCHAR}, #{item.updateTime,jdbcType=VARCHAR})
     </foreach>
 
   </insert>

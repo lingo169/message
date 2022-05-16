@@ -1,5 +1,6 @@
 package com.lin.controller.req;
 
+import com.lin.common.rest.ReqMsg;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

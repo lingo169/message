@@ -2,6 +2,7 @@ package com.lin.start;
 
 import com.corundumstudio.socketio.SocketIOServer;
 import com.lin.config.SpringContextIniter;
+import com.lin.properties.ConsumeProperties;
 import org.redisson.api.RedissonClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,68 +17,74 @@ import javax.annotation.PreDestroy;
 @Configuration
 @Component
 public class NettyApplicationRunner implements ApplicationRunner {
-    protected static Logger LOG = LoggerFactory.getLogger(NettyApplicationRunner.class);
+    protected static Logger log = LoggerFactory.getLogger(NettyApplicationRunner.class);
 
-    public static final String NAMESPACE_ = "/chat1";//构建命名空间
+//    public static final String NAMESPACE_ = "/chat1";//构建命名空间
     @Autowired
     private SocketIOServer socketIOServer;
     @Autowired
-    private RedissonClient redissonClient;
-//    @Autowired
-//    private NamespaceHandler namespaceHandler;
+    private ConsumeProperties consumeProperties;
 
-//
-//
-//
-//    /**
-//     * 注入OnConnect，OnDisconnect，OnEvent注解。 不写的话Spring无法扫描OnConnect，OnDisconnect等注解
-//     */
-//    @Bean
-//    public SpringAnnotationScanner springAnnotationScanner(SocketIOServer socketIOServer) {
-//        return new SpringAnnotationScanner(socketIOServer);
-//    }
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        //SocketIOServer ss =SocketServerFactory.getInstance();
+        //socketio 消费
+//        DefaultMQPushConsumer dpc = CommonConsumerFactory.getInstance(consumeProperties.getSocketio().get(RocketMqConstant.CONSUMER_GROUP), MessageModel.BROADCASTING, consumeProperties.getSocketio().get(RocketMqConstant.TOPIC), consumeProperties.getSocketio().get(RocketMqConstant.TAGS));
+//        log.info("DefaultMQPushConsumer {},MessageModel:{},Subscription:{}",dpc.getConsumerGroup(),dpc.getMessageModel(),dpc.getSubscription());
+//        Thread.sleep(1000);
+//        //更新group的内容消费
+//        DefaultMQPushConsumer dpc2 = CommonConsumerFactory.getInstance(consumeProperties.getContent().get(RocketMqConstant.CONSUMER_GROUP), MessageModel.CLUSTERING, consumeProperties.getContent().get(RocketMqConstant.TOPIC), consumeProperties.getContent().get(RocketMqConstant.TAGS));
+//        log.info("DefaultMQPushConsumer {},MessageModel:{},Subscription:{}",dpc2.getConsumerGroup(),dpc2.getMessageModel(),dpc2.getSubscription());
         socketIOServer.start();
-//        socketIOServer.start();
-//        com.corundumstudio.socketio.Configuration config = new com.corundumstudio.socketio.Configuration();
-//        config.setHostname("localhost");
-//        config.setPort(9092);
-//
-//        final SocketIOServer server = new SocketIOServer(config);
-//        final SocketIONamespace chat1namespace = server.addNamespace("/chat1");
-//        chat1namespace.addEventListener("message", ChatObject.class, new DataListener<ChatObject>() {
-//            @Override
-//            public void onData(SocketIOClient client, ChatObject data, AckRequest ackRequest) {
-//                // broadcast messages to all clients
-//                chat1namespace.getBroadcastOperations().sendEvent("message", data);
-//            }
-//        });
-//
-//        final SocketIONamespace chat2namespace = server.addNamespace("/chat2");
-//        chat2namespace.addEventListener("message", ChatObject.class, new DataListener<ChatObject>() {
-//            @Override
-//            public void onData(SocketIOClient client, ChatObject data, AckRequest ackRequest) {
-//                // broadcast messages to all clients
-//                chat2namespace.getBroadcastOperations().sendEvent("message", data);
-//            }
-//        });
-//
-//        server.start();
+
     }
+
+//    public static void main(String[] args) throws MQClientException, UnsupportedEncodingException, RemotingException, InterruptedException {
+//        DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
+//        // Specify name server addresses.
+//        producer.setNamesrvAddr("139.198.176.37:9876");
+//        //Launch the instance.
+//        producer.start();
+//        //Create a message instance, specifying topic, tag and message body.
+//        Message msg = new Message("TopicTest",
+//                "TagA",
+//                ("Hello RocketMQ ").getBytes(RemotingHelper.DEFAULT_CHARSET)
+//        );
+//        SendResult sendResult = null;
+//        try {
+//            //Call send message to deliver message to one of brokers.
+//            producer.send(msg, new SendCallback() {
+//
+//                @Override
+//                public void onSuccess(SendResult sendResult) {
+//                    System.out.println(sendResult);
+//                }
+//
+//                @Override
+//                public void onException(Throwable throwable) {
+//                    log.error("eerror: {}", throwable);
+//                    System.out.println(throwable);
+//                }
+//            });
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        Thread.sleep(Integer.MAX_VALUE);
+//        System.out.printf("shutdown %s%n", sendResult);
+//        //Shut down once the producer instance is not longer in use.
+//        producer.shutdown();
+//    }
 
     @PreDestroy
     private void autoStop() throws Exception {
-        LOG.info("stop socketIOServer");
+        log.info("stop socketIOServer");
 //        SocketIOServer ss =SocketServerFactory.getInstance();
         // 避免重启项目服务端口占用问题
         if (socketIOServer != null) {
             socketIOServer.stop();
         }
-        LOG.info("shutdown redissonClient");
-        RedissonClient redissonClient= SpringContextIniter.getBean(RedissonClient.class);
-        if(redissonClient!=null){
+        log.info("shutdown redissonClient");
+        RedissonClient redissonClient = SpringContextIniter.getBean(RedissonClient.class);
+        if (redissonClient != null) {
             redissonClient.shutdown();
         }
     }

@@ -1,5 +1,6 @@
 package com.lin.controller.req;
 
+import com.lin.common.rest.ReqMsg;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -10,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 @ApiModel(description = "修改密码信息")
 @Getter
 @Setter
-public class ModifyPassReqMsg {
+public class ModifyPassReqMsg extends ReqMsg {
 
     @ApiModelProperty(value = "邮箱", required = true)
     @NotBlank(message = "邮箱不能为空")

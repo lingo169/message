@@ -2,10 +2,11 @@ package com.lin.controller;
 
 import com.lin.common.error.CustomRuntimeException;
 import com.lin.common.error.ErrorCode;
+import com.lin.common.rest.ResMsg;
 import com.lin.controller.req.ChatListReqMsg;
+import com.lin.controller.req.ChatsDetailReqMsg;
 import com.lin.controller.res.ChatPageResMsg;
 import com.lin.controller.res.CustomerChatPageResMsg;
-import com.lin.controller.res.ResMsg;
 import com.lin.service.chats.ChatsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
+import java.util.Date;
 
 @Api(tags = "聊天入口")
 @RestController
@@ -33,18 +35,19 @@ public class ChatsController implements BaseController {
     @PostMapping("/chatlist")
     public ResMsg<CustomerChatPageResMsg> chatlist(@Valid @RequestBody ChatListReqMsg reqMsg, BindingResult bindingResult) throws InvalidKeySpecException, NoSuchAlgorithmException, CustomRuntimeException {
         BaseController.verify(bindingResult);
-        if (reqMsg.getPageNo() == null && reqMsg.getPageSize() == null) {
-            throw new CustomRuntimeException(ErrorCode.ERR_CODE_INVALIDATION, ErrorCode.ERR_CODE_INVALIDATION.getMessage());
-        }
         ResMsg<CustomerChatPageResMsg> urs = new ResMsg<>();
-        return urs.withData(chatsService.chatlist(reqMsg.getId(), reqMsg.getPageSize(), reqMsg.getPageNo()));
+        return urs.withData(chatsService.chatlist(reqMsg.getCustomerId(), reqMsg.getPageSize(), reqMsg.getPageNo()));
     }
 
     @ApiOperation("获取聊天信息接口")
-    @PostMapping("/chatlist/{id}")
-    public ResMsg<ChatPageResMsg> chatlistby(@PathVariable String id){
+    @PostMapping("/chatdetail")
+    public ResMsg<ChatPageResMsg> chatdetail(@Valid @RequestBody ChatsDetailReqMsg reqMsg/*, BindingResult bindingResult*/) throws CustomRuntimeException {
+        //BaseController.verify(bindingResult);
         ResMsg<ChatPageResMsg> urs = new ResMsg<>();
+        return urs.withData(chatsService.chatdetail(reqMsg));
+    }
 
-        return urs;
+    public static void main(String[] args) {
+        System.out.println(new Date().getTime());
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -13,6 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableEncryptableProperties
 @ConfigurationPropertiesScan(basePackages={"com.lin.properties"})
 @MapperScan(basePackages= {"com.lin.dao"})
+@EnableTransactionManagement
 @EnableOpenApi
 public class CustomerServiceApplication {
 
